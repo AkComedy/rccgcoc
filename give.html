@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Give Page</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
+    <link rel="shortcut icon" type="image/x-icon" href="assets/img/apple-icon.png">
+    <!-- Load Require CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font CSS -->
+    <link href="assets/css/boxicon.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="assets/css/templatemo.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="assets/css/custom.css">
+<!--
+   
+
+-->
+<style type="text/css">
+<!--
+.style1 {color: #FF3300}
+.style2 {color: #FF6600}
+.style3 {color: #000000}
+-->
+</style>
+</head>
+
+<body>
+    <!-- Header -->
+    <nav id="main_nav" class="navbar navbar-expand-lg navbar-light bg-white shadow">
+        <div class="container d-flex justify-content-between align-items-center">
+            
+          <span class="alert-link">
+          <button type="button" class="border-0 style3" data-bs-toggle="collapse" data-bs-target="#navbar-toggler-success" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">                </button>
+          <img src="assets/img/apple-icon.png" width="130" height="100
+			"></span>
+          <div class="align-self-center collapse navbar-collapse flex-fill  d-lg-flex justify-content-lg-between" id="navbar-toggler-success">
+                <div class="flex-fill mx-xl-5 mb-2">
+                    <ul class="nav navbar-nav d-flex justify-content-between mx-xl-5 text-center text-dark">
+                        <li class="nav-item">
+                            <a href="index.html" class="px-3 rounded-pill btn-outline-primary nav-link style4"><strong>Home</strong></a>                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="about.html"><strong>About</strong></a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="give.html"><strong>Give</strong></a>                        </li>
+                        <li class="nav-item">
+                            <a href="https://fb.watch/8w2hrqLFSD/" class="px-3 rounded-pill btn-outline-primary nav-link style4"><strong>Watch Live </strong></a>                        </li>
+						<li class="nav-item">
+                            <a href="https://web.facebook.com/media/set/?vanity=rccgcoc&set=a.1527720930733266" class="px-3 rounded-pill btn-outline-primary nav-link style4"><strong>Gallery</strong></a>                        </li>
+							<li class="nav-item">
+                            <a class="nav-link btn-outline-primary rounded-pill px-3" href="contact.html"><strong>Contact</strong></a>                        </li>
+                    </ul>
+                </div>
+                <div class="navbar align-self-center d-flex">
+                    <a class="nav-link" href="#"><i class='bx bx-bell bx-sm bx-tada-hover text-primary'></i></a>
+                    <a class="nav-link" href="#"><i class='bx bx-cog bx-sm text-primary'></i></a>
+                    <a class="nav-link" href="#"><i class='bx bx-user-circle bx-sm text-primary'></i></a>                </div>
+          </div>
+      </div>
+    </nav>
+    <!-- Close Header -->
+
+
+    <!-- Start Banner Hero -->
+    <div id="work_banner" class="banner-wrapper bg-light w-100 py-5">
+        <div class="banner-vertical-center-work container text-light d-flex justify-content-center align-items-center py-5 p-0">
+            <div class="banner-content col-lg-8 col-12 m-lg-auto text-center">
+                <h1 class="banner-heading h2 display-3 pb-5 semi-bold-600 typo-space-line-center">ONLINE PAYMENT </h1>
+                <h3 class="h4 pb-2 regular-400">Give and it will be given to you</h3>
+                <p class="alert-link">
+                    A good measure, pressed down, shaken together and running over, will be poured into your lap. For with the measure you use, it will be measured to you”(NIV).    
+					<p>
+					           
+							    <img src="account number.png" width="700" height="500
+			">
+							   </p>
+							   <p>
+                <p class="alert-link"><div class="form-group">
+                                                        <div class="col-sm-offset-2 col-sm-1"><span ng-show='submit_load'><img src="assets/isw_logo_new_combined2.png" width="300" height="40" /></span></div> 
+                                                        </p>
+                <form class="form-horizontal"  name="infoList" id="infoList" ng-submit="insertInfo(Info);">		                        						
+                                                      <div class='form-group' >
+                                                            <label for="payment_code" class="col-sm-2 control-label">
+															
+                                                                Payment Code 
+                                                            </label>
+                                                            
+                                                            <div class="col-sm-6">
+                                                                <div class="checkbox">
+                                                                  <label>
+                                                                    <input type="checkbox" ng-click="showModalPaymentCode()" value="Remember Me" name="remember">
+                                                                  <span style="color:#FF6600"> Click here if you already have one</span>                                                                    </label>
+                                                                </div>
+                                                            </div>
+                                                            <span class="col-sm-4 control-label"></span>
+                                                      </div>	
+                                    								
+                                                        <div class='form-group' >
+                                                            <label for="payment_typeID" class="col-sm-2 control-label">
+                                                                Payment Type <span class="text-red style1">*</span>                                                            </label>
+                                                            
+                                                            <div class="col-sm-10">
+                                        						<select id="payment_type" name="payment_type" ng-model="Info.payment_typeID" 
+                                        							ng-change="setPaymentTypeID(Info.payment_typeID)" 
+                                        							 ng-init="Info.payment_typeID = {{paytype}}"
+                                        							class="form-control">
+                                        							<!--<option value="" selected="selected">--SELECT--</option>-->	
+																	 <option selected="selected" value="">--SELECT--</option>				
+                                        							<option value="Offering"> Offering</option>
+                                        							<option value="Thanksgiving Offering">Thanksgiving Offering</option>
+                                        							<option value="Church Renovation">Church Renovation</option>
+                                        							<option value="Children Church Donations">Children Church Donations</option>
+                                        							<option value="Online Tithes">Online Tithes</option>
+                                        							<option value="Media Donations">Media Donations</option>
+                                        							<option value="Donate For COC Admin Cause">Donate For COC Admin Cause</option>
+                                        							<option value="FirstFruit">FirstFruit</option>
+                                        							<option value="Technical Donations">Technical Donations</option>
+                                        							<option value="Donation For the Poor">Donation For the Poor</option>													
+                                        						</select>
+                                                            </div>
+                                                            
+                                                            <span class="col-sm-4 control-label"></span>
+                                                        </div>
+                                        
+                                                        <div class='form-group' >
+                                                            <label for="last_name" class="col-sm-2 control-label">
+                                                                Last Name <span class="text-red style2">*</span>                                                            </label>
+                                                            
+                                                            <div class="col-sm-10">
+                                                                <input type="text" id="lastname" name="lastname" class="form-control" ng-model="Info.last_name" >
+                                                            </div>
+                                                            <span class="col-sm-4 control-label"></span>
+                                                        </div>
+                                        
+                                                        <div class='form-group' >
+                                                            <label for="first_name" class="col-sm-2 control-label">
+                                                                First Name <span class="text-red style2">*</span>                                                            </label>
+                                                            
+                                                            <div class="col-sm-10">
+                                                                <input type="text" id="firstname" name="firstname" class="form-control" ng-model="Info.first_name" >
+                                                            </div>
+                                                            <span class="col-sm-4 control-label"></span>
+                                                        </div>
+                                                
+                                                        <div class='form-group' >
+                                                            <label for="email" class="col-sm-2 control-label">
+                                                                Email
+                                                            </label>
+                                                            
+                                                            <div class="col-sm-10">
+                                                                <input type="text" id="email" name="email" class="form-control" ng-model="Info.email" >
+                                                            </div>
+                                                            <span class="col-sm-4 control-label"></span>
+                                                        </div>
+                                                
+                                                    <div class='form-group' >   
+                                                        <label for="sex" class="col-sm-2 control-label">
+                                                            Sex <span class="text-red style2">*</span>                                                        </label>
+                                                        
+                                                        <div class="col-sm-10"> 
+                                                    		<select name="sex" class="form-control" id="sex" ng-model="Info.sex">													
+                                                			    <option selected="selected" value="">--SELECT--</option><option value="Male">Male</option><option value="Female">Female</option>													
+                               						      </select>
+                                                        </div>
+                                                        
+                                                        <span class="col-sm-4 control-label"></span>
+                                                    </div>
+                                                    
+                                                    <div class='form-group' >
+                                                        <label for="country" class="col-sm-2 control-label">
+                                                            Country
+                                                        </label>
+                                                        
+                                                        <div class="col-sm-10">
+                                                        	<select id="country" name="country" ng-model="Info.country" ng-init="Info.country = '234'" ng-change="setCountryCode(Info.country)" class="form-control">													
+                                                        	                                                                            <option value="355">Albania</option>
+                                                                                                                                                <option value="213">Algeria</option>
+                                                                                                                                                <option value="684">American Samoa</option>
+                                                                                                                                                <option value="376">Andorra</option>
+                                                                                                                                                <option value="244">Angola</option>
+                                                                                                                                                <option value="1-264">Anguilla</option>
+                                                                                                                                                <option value="672">Antarctica</option>
+                                                                                                                                                <option value="1-268">Antigua and Barb</option>
+                                                                                                                                                <option value="54">Argentina</option>
+                                                                                                                                                <option value="374">Armenia</option>
+                                                                                                                                                <option value="297">Aruba</option>
+                                                                                                                                                <option value="61">Australia</option>
+                                                                                                                                                <option value="43">Austria</option>
+                                                                                                                                                <option value="93">Afghanistan</option>
+                                                                                                                                                <option value="994">Azerbaijan</option>
+                                                                                                                                                <option value="1-242">Bahamas</option>
+                                                                                                                                                <option value="973">Bahrain</option>
+                                                                                                                                                <option value="880">Bangladesh</option>
+                                                                                                                                                <option value="1-246">Barbados</option>
+                                                                                                                                                <option value="375">Belarus</option>
+                                                                                                                                                <option value="32">Belgium</option>
+                                                                                                                                                <option value="501">Belize</option>
+                                                                                                                                                <option value="229">Benin</option>
+                                                                                                                                                <option value="1-441">Bermuda</option>
+                                                                                                                                                <option value="975">Bhutan</option>
+                                                                                                                                                <option value="591">Bolivia</option>
+                                                                                                                                                <option value="">Bonaire</option>
+                                                                                                                                                <option value="387">Bosnia and Herzegovina</option>
+                                                                                                                                                <option value="267">Botswana</option>
+                                                                                                                                                <option value="55">Brazil</option>
+                                                                                                                                                <option value="">British Indian Ocean Ter</option>
+                                                                                                                                                <option value="673">Brunei</option>
+                                                                                                                                                <option value="359">Bulgaria</option>
+                                                                                                                                                <option value="226">Burkina Faso</option>
+                                                                                                                                                <option value="257">Burundi</option>
+                                                                                                                                                <option value="855">Cambodia</option>
+                                                                                                                                                <option value="237">Cameroon</option>
+                                                                                                                                                <option value="1">Canada</option>
+                                                                                                                                                <option value="">Canary Islands</option>
+                                                                                                                                                <option value="238">Cape Verde</option>
+                                                                                                                                                <option value="1-345">Cayman Islands</option>
+                                                                                                                                                <option value="236">Central African Republic</option>
+                                                                                                                                                <option value="235">Chad</option>
+                                                                                                                                                <option value="">Channel Islands</option>
+                                                                                                                                                <option value="56">Chile</option>
+                                                                                                                                                <option value="86">China</option>
+                                                                                                                                                <option value="86">Christmas Island</option>
+                                                                                                                                                <option value="61">Cocos Island</option>
+                                                                                                                                                <option value="57">Colombia</option>
+                                                                                                                                                <option value="269">Comoros</option>
+                                                                                                                                                <option value="242">Congo</option>
+                                                                                                                                                <option value="682">Cook Islands</option>
+                                                                                                                                                <option value="506">Costa Rica</option>
+                                                                                                                                                <option value="">Cote DIvoire</option>
+                                                                                                                                                <option value="385">Croatia</option>
+                                                                                                                                                <option value="53">Cuba</option>
+                                                                                                                                                <option value="357">Curaco</option>
+                                                                                                                                                <option value="357">Cyprus</option>
+                                                                                                                                                <option value="420">Czech Republic</option>
+                                                                                                                                                <option value="45">Denmark</option>
+                                                                                                                                                <option value="253">Djibouti</option>
+                                                                                                                                                <option value="1-767">Dominica</option>
+                                                                                                                                                <option value="809">Dominican Republic</option>
+                                                                                                                                                <option value="">East Timor</option>
+                                                                                                                                                <option value="593">Ecuador</option>
+                                                                                                                                                <option value="20">Egypt</option>
+                                                                                                                                                <option value="503">El Salvador</option>
+                                                                                                                                                <option value="240">Equatorial Guinea</option>
+                                                                                                                                                <option value="291">Eritrea</option>
+                                                                                                                                                <option value="372">Estonia</option>
+                                                                                                                                                <option value="251">Ethiopia</option>
+                                                                                                                                                <option value="500">Falkland Islands</option>
+                                                                                                                                                <option value="298">Faroe Islands</option>
+                                                                                                                                                <option value="679">Fiji</option>
+                                                                                                                                                <option value="358">Finland</option>
+                                                                                                                                                <option value="33">France</option>
+                                                                                                                                                <option value="594">French Guiana</option>
+                                                                                                                                                <option value="">French Polynesia</option>
+                                                                                                                                                <option value="">French Southern Ter</option>
+                                                                                                                                                <option value="241">Gabon</option>
+                                                                                                                                                <option value="220">Gambia</option>
+                                                                                                                                                <option value="995">Georgia</option>
+                                                                                                                                                <option value="49">Germany</option>
+                                                                                                                                                <option value="233">Ghana</option>
+                                                                                                                                                <option value="350">Gibraltar</option>
+                                                                                                                                                <option value="44">Great Britain</option>
+                                                                                                                                                <option value="30">Greece</option>
+                                                                                                                                                <option value="299">Greenland</option>
+                                                                                                                                                <option value="1-473">Grenada</option>
+                                                                                                                                                <option value="590">Guadeloupe</option>
+                                                                                                                                                <option value="1-671">Guam</option>
+                                                                                                                                                <option value="502">Guatemala</option>
+                                                                                                                                                <option value="224">Guinea</option>
+                                                                                                                                                <option value="592">Guyana</option>
+                                                                                                                                                <option value="509">Haiti</option>
+                                                                                                                                                <option value="">Hawaii</option>
+                                                                                                                                                <option value="504">Honduras</option>
+                                                                                                                                                <option value="852">Hong Kong</option>
+                                                                                                                                                <option value="36">Hungary</option>
+                                                                                                                                                <option value="354">Iceland</option>
+                                                                                                                                                <option value="91">India</option>
+                                                                                                                                                <option value="62">Indonesia</option>
+                                                                                                                                                <option value="98">Iran</option>
+                                                                                                                                                <option value="964">Iraq</option>
+                                                                                                                                                <option value="353">Ireland</option>
+                                                                                                                                                <option value="225">Ivory Coast</option>
+                                                                                                                                                <option value="972">Israel</option>
+                                                                                                                                                <option value="39">Italy</option>
+                                                                                                                                                <option value="1-876">Jamaica</option>
+                                                                                                                                                <option value="81">Japan</option>
+                                                                                                                                                <option value="962">Jordan</option>
+                                                                                                                                                <option value="7">Kazakhstan</option>
+                                                                                                                                                <option value="254">Kenya</option>
+                                                                                                                                                <option value="686">Kiribati</option>
+                                                                                                                                                <option value="850">Korea North</option>
+                                                                                                                                                <option value="82">Korea Sout</option>
+                                                                                                                                                <option value="965">Kuwait</option>
+                                                                                                                                                <option value="996">Kyrgyzstan</option>
+                                                                                                                                                <option value="856">Laos</option>
+                                                                                                                                                <option value="371">Latvia</option>
+                                                                                                                                                <option value="961">Lebanon</option>
+                                                                                                                                                <option value="266">Lesotho</option>
+                                                                                                                                                <option value="231">Liberia</option>
+                                                                                                                                                <option value="218">Libya</option>
+                                                                                                                                                <option value="423">Liechtenstein</option>
+                                                                                                                                                <option value="370">Lithuania</option>
+                                                                                                                                                <option value="352">Luxembourg</option>
+                                                                                                                                                <option value="853">Macau</option>
+                                                                                                                                                <option value="389">Macedonia</option>
+                                                                                                                                                <option value="261">Madagascar</option>
+                                                                                                                                                <option value="60">Malaysia</option>
+                                                                                                                                                <option value="265">Malawi</option>
+                                                                                                                                                <option value="960">Maldives</option>
+                                                                                                                                                <option value="223">Mali</option>
+                                                                                                                                                <option value="356">Malta</option>
+                                                                                                                                                <option value="692">Marshall Islands</option>
+                                                                                                                                                <option value="596">Martinique</option>
+                                                                                                                                                <option value="222">Mauritania</option>
+                                                                                                                                                <option value="230">Mauritius</option>
+                                                                                                                                                <option value="269">Mayotte</option>
+                                                                                                                                                <option value="52">Mexico</option>
+                                                                                                                                                <option value="">Midway Islands</option>
+                                                                                                                                                <option value="373">Moldova</option>
+                                                                                                                                                <option value="377">Monaco</option>
+                                                                                                                                                <option value="976">Mongolia</option>
+                                                                                                                                                <option value="1-664">Montserrat</option>
+                                                                                                                                                <option value="212">Morocco</option>
+                                                                                                                                                <option value="258">Mozambique</option>
+                                                                                                                                                <option value="95">Myanmar</option>
+                                                                                                                                                <option value="264">Nambia</option>
+                                                                                                                                                <option value="674">Nauru</option>
+                                                                                                                                                <option value="977">Nepal</option>
+                                                                                                                                                <option value="31">Netherland Antilles</option>
+                                                                                                                                                <option value="599">Netherlands</option>
+                                                                                                                                                <option value="">Nevis</option>
+                                                                                                                                                <option value="687">New Caledonia</option>
+                                                                                                                                                <option value="64">New Zealand</option>
+                                                                                                                                                <option value="505">Nicaragua</option>
+                                                                                                                                                <option value="227">Niger</option>
+                                                                                                                                                <option value="234">Nigeria</option>
+                                                                                                                                                <option value="683">Niue</option>
+                                                                                                                                                <option value="">Norfolk Island</option>
+                                                                                                                                                <option value="47">Norway</option>
+                                                                                                                                                <option value="968">Oman</option>
+                                                                                                                                                <option value="92">Pakistan</option>
+                                                                                                                                                <option value="680">Palau Island</option>
+                                                                                                                                                <option value="">Palestine</option>
+                                                                                                                                                <option value="507">Panama</option>
+                                                                                                                                                <option value="675">Papua New Guinea</option>
+                                                                                                                                                <option value="595">Paraguay</option>
+                                                                                                                                                <option value="51">Peru</option>
+                                                                                                                                                <option value="63">Phillipines</option>
+                                                                                                                                                <option value="">Pitcairn Island</option>
+                                                                                                                                                <option value="48">Poland</option>
+                                                                                                                                                <option value="351">Portugal</option>
+                                                                                                                                                <option value="1-787">Puerto Rico</option>
+                                                                                                                                                <option value="974">Qatar</option>
+                                                                                                                                                <option value="">Republic of Montenegro</option>
+                                                                                                                                                <option value="">Republic of Serbia</option>
+                                                                                                                                                <option value="262">Reunion</option>
+                                                                                                                                                <option value="40">Romania</option>
+                                                                                                                                                <option value="7">Russia</option>
+                                                                                                                                                <option value="250">Rwanda</option>
+                                                                                                                                                <option value="">St Barthelemy</option>
+                                                                                                                                                <option value="">St Eustatius</option>
+                                                                                                                                                <option value="290">St Helena</option>
+                                                                                                                                                <option value="1-869">St Kitts-Nevis</option>
+                                                                                                                                                <option value="1-758">St Lucia</option>
+                                                                                                                                                <option value="">St Maarten</option>
+                                                                                                                                                <option value="508">St Pierre and Miquelon</option>
+                                                                                                                                                <option value="1-784">St Vincent and Grenadines</option>
+                                                                                                                                                <option value="684">Saipan</option>
+                                                                                                                                                <option value="">Samoa</option>
+                                                                                                                                                <option value="">Samoa American</option>
+                                                                                                                                                <option value="378">San Marino</option>
+                                                                                                                                                <option value="239">Sao Tome and Principe</option>
+                                                                                                                                                <option value="966">Saudi Arabia</option>
+                                                                                                                                                <option value="221">Senegal</option>
+                                                                                                                                                <option value="248">Seychelles</option>
+                                                                                                                                                <option value="232">Sierra Leone</option>
+                                                                                                                                                <option value="65">Singapore</option>
+                                                                                                                                                <option value="421">Slovakia</option>
+                                                                                                                                                <option value="386">Slovenia</option>
+                                                                                                                                                <option value="677">Solomon Islands</option>
+                                                                                                                                                <option value="252">Somalia</option>
+                                                                                                                                                <option value="27">South Africa</option>
+                                                                                                                                                <option value="34">Spain</option>
+                                                                                                                                                <option value="94">Sri Lanka</option>
+                                                                                                                                                <option value="249">Sudan</option>
+                                                                                                                                                <option value="597">Suriname</option>
+                                                                                                                                                <option value="268">Swaziland</option>
+                                                                                                                                                <option value="46">Sweden</option>
+                                                                                                                                                <option value="41">Switzerland</option>
+                                                                                                                                                <option value="963">Syria</option>
+                                                                                                                                                <option value="">Tahiti</option>
+                                                                                                                                                <option value="886">Taiwan</option>
+                                                                                                                                                <option value="992">Tajikistan</option>
+                                                                                                                                                <option value="255">Tanzania</option>
+                                                                                                                                                <option value="66">Thailand</option>
+                                                                                                                                                <option value="228">Togo</option>
+                                                                                                                                                <option value="690">Tokelau</option>
+                                                                                                                                                <option value="676">Tonga</option>
+                                                                                                                                                <option value="1-868">Trinidad and Tobago</option>
+                                                                                                                                                <option value="216">Tunisia</option>
+                                                                                                                                                <option value="90">Turkey</option>
+                                                                                                                                                <option value="993">Turkmenistan</option>
+                                                                                                                                                <option value="1-649">Turks and Caicos Is</option>
+                                                                                                                                                <option value="688">Tuvalu</option>
+                                                                                                                                                <option value="256">Uganda</option>
+                                                                                                                                                <option value="380">Ukraine</option>
+                                                                                                                                                <option value="971">United Arab Erimates</option>
+                                                                                                                                                <option value="44">United Kingdom</option>
+                                                                                                                                                <option value="1">United States of America</option>
+                                                                                                                                                <option value="">Uraguay</option>
+                                                                                                                                                <option value="998">Uzbekistan</option>
+                                                                                                                                                <option value="678">Vanuatu</option>
+                                                                                                                                                <option value="39">Vatican City State</option>
+                                                                                                                                                <option value="58">Venezuela</option>
+                                                                                                                                                <option value="84">Vietnam</option>
+                                                                                                                                                <option value="1-284">Virgin Islands (Brit)</option>
+                                                                                                                                                <option value="1-340">Virgin Islands (USA)</option>
+                                                                                                                                                <option value="">Wake Island</option>
+                                                                                                                                                <option value="681">Wallis and Futana Is</option>
+                                                                                                                                                <option value="967">Yemen</option>
+                                                                                                                                                <option value="">Zaire</option>
+                                                                                                                                                <option value="260">Zambia</option>
+                                                                                                                                                <option value="263">Zimbabwe</option>
+                                                                                                                                    <!--</select>-->
+                                                            </select>
+                                                        </div>
+                                                        
+                                                        <span class="col-sm-4 control-label"></span>
+                                                    </div>
+
+                                                    <div class='form-group' >
+                                                        <label for="phone" class="col-sm-2 control-label">
+                                                            Phone
+                                                        </label>
+                                                        
+                                                        <div class="col-sm-10">
+                                                            <div class="input-group">
+                                                                <!--<input type="text" readonly="readonly" class="form-control" size="2" ng-model="country_code" />-->
+                                                                <input  id="phon_concode" name="phon_concode" type="text" class="form-control" size="2" ng-model="country_code" />
+                                                                <span class="alert-link">-</span>
+                                                                <input id="phone" name="phone"type="text" class="form-control" ng-model="Info.phone" />
+                                                          </div>
+                                                        </div>
+                                                        <span class="col-sm-4 control-label"></span>
+                                                    </div>
+                                                    
+                                                    <div class='form-group' >  
+                                                        <label for="currency" class="col-sm-2 control-label">
+                                                            Currency <span class="text-red style2">*</span>                                                        </label>
+                                                        
+                                                        <div class="col-sm-10">
+
+                                                    	    <select id="currency" name="currency" ng-model="Info.currency" ng-init="Info.currency = 'NGN'" class="form-control">													
+                                                    			<option value="NGN">NGN</option><option value="USD">USD</option>													
+                                                            </select>
+                                                        </div>
+                                                        
+                                                        <span class="col-sm-4 control-label"></span>
+                                                    </div>
+                                                    
+                                                    <div class='form-group' >
+                                                        <label for="amount" class="col-sm-2 control-label">
+                                                            Amount <span class="text-red style2">*</span>                                                        </label>
+                                                        
+                                                        <div class="col-sm-10">
+                                                          <input id="amount" name="amount" type="text" class="form-control" ng-model="Info.amount" >
+                                                        </div>
+                                                        
+                                                        <span class="col-sm-4 control-label"></span>
+                                                    </div>
+                                                        
+                                                    <!--
+                                                    <div class="form-group">
+                                                        <div class="col-sm-offset-2 col-sm-8">        
+                                                            <button class="btn btn-default" type="submit" value="GTB_WEBPAY" name="bank">
+                                                                <img src="../assets/images/gtb.jpg"  /> Make Payment
+                                                            </button>
+                                                        </div>
+                                                    </div>
+                                                    -->
+                                                        
+                                                    <div class="form-group">
+                                                      <div class="col-sm-10">
+                                                            
+                                                      </div>
+                  </div>
+                                                        
+                  <div>
+                                                    	<!--<div style="border-style:solid;border-width:5px; width:230px; margin-left:30px">-->
+                                                        <div class="warning">
+                                                    		<div style="padding:10px">TO MAKE PAYMENT KINDLY CLICK ON ANY OF THE BANK ICON BELOW</div>
+                                                    		<div style="color:#FF0000; padding:10px">If you have problem with the bank you choose please use another bank</div>
+                                                    	</div>
+                                        
+                                                        <input type="image" ng-disabled="infoList.$invalid" ng-click="gatewayClicked('Gtbank');" src="assets/gtbank.jpeg" class="quform-submit-button" name="btnimgGtbank" width="70" height="70" border="0" title="Make Payment" style="border-radius: 50%;" />
+                                                        <input type="image" ng-disabled="infoList.$invalid" ng-click="gatewayClicked('Zenith');" src="assets/zenith.jpeg" class="quform-submit-button" name="btnimgZenith" width="70" height="70" border="0" title="Make Payment" style="border-radius: 50%;" />
+<input type="image" ng-disabled="infoList.$invalid" ng-click="gatewayClicked('access');" src="assets/access.jpeg" class="quform-submit-button" name="btnimgaccess" width="70" height="70" border="0" title="Make Payment" style="border-radius: 50%;" />
+                                                        <input type="image" ng-disabled="infoList.$invalid" ng-click="gatewayClicked('Stanbic');" src="assets/stanbic.png" class="quform-submit-button" name="btnimgStanbic" width="70" height="70" border="0" title="Make Payment" style="border-radius: 50%;" />
+                                                        <input type="image" ng-disabled="infoList.$invalid" ng-click="gatewayClicked('ECOBANK');" src="assets/ecobank.jpeg" class="quform-submit-button" name="btnimgECOBANK" width="70" height="70" border="0" title="Make Payment" style="border-radius: 50%;" />
+                                                        <input type="image" ng-disabled="infoList.$invalid" ng-click="gatewayClicked('Remita');" src="assets/remita.png" class="quform-submit-button" name="btnimgRemita" width="70" height="70" border="0" title="Make Payment" style="border-radius: 50%;" />
+                  </div>
+                                                        
+                  </form>                   
+          </div> <!-- col-sm-8 -->
+              </div>
+          </div>	
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </div>
+                
+				
+            </div>
+        </div>
+    </div>
+    <!-- End Banner Hero -->
+	
+	 
+       <!-- Start Footer -->
+    <footer class="bg-secondary pt-4">
+        <div class="container">
+            <div class="row py-4">
+
+              <div class="col-lg-3 col-12 align-left">
+                    <a class="navbar-brand" href="index.html">
+                        <i class='bx bx-buildings bx-sm text-light'></i>
+                        <span class="text-light h5">CITY OF</span> <span class="text-light h5 semi-bold-600">CHAMPIONS</span>
+                    </a>
+                    <p class="text-light my-lg-4 my-2">
+                        26/28 Shonola Street, Opposite Excellence Hotel, Aguda B/Stop Ogba Lagos 
+                    </p>     
+					 <span class="alert-link style3"><strong>Click the Below Icon To Connect With Us On Social Media</strong></span> 
+			    </p>    
+                  <td><a href=https://www.instagram.com/rccgcoc/><img src="assets/instagram.jpeg" alt="Instagram" width="35" height="30" border="0" /></a></td>
+						 <td><a href="https://www.facebook.com/rccgcoc"><img src="assets/facebook.jpeg" alt="facebook" width="35" height="30" border="0" /></a></td>
+						 <td><a href="https://mixlr.com/rccg-coc"><img src="assets/mixlr.jpeg" alt="mixlr" width="35" height="30" border="0" /></a></td>
+						 <td><a href=https://www.youtube.com/rccgcoc><img src="assets/YouTube.png" alt="youtube" width="120" height="60" border="0" /></a></td>
+                       
+                  </ul>
+              </div>
+
+                <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
+                    <h3 class="h4 pb-lg-3 text-light light-300">
+                    <strong class="alert-link">Our Church</strong>
+                  <ul class="list-unstyled text-light light-300">
+                            <li class="pb-2">
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light" href="index.html">Home</a>
+                            </li>
+                            <li class="pb-2">
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" href="about.html">About Us</a>
+                            </li>
+                            <li class="pb-2">
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" href="give.html">Give</a>
+                            </li>
+                            <li class="pb-2">
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i></i><a class="text-decoration-none text-light py-1"  <a href="https://web.facebook.com/media/set/?vanity=rccgcoc&set=a.1527720930733266">Gallery</a></li>
+                            <li class="pb-2">
+                                <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" href="contact.html">Contact</a>
+                            </li>
+                  </ul>
+              </div>
+
+                <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
+                    <h2 class="alert-link"><strong>Our Programs </strong></h2>
+                    <ul class="list-unstyled text-light light-300">
+                        <li class="pb-2">
+                            <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" href="#">Sunday Service : </a></li>
+                        <li class="pb-2"><a class="text-decoration-none text-light py-1" href="#">1st Service (7:30am)</a>, </li>
+                        <li class="pb-2">2nd Service (9:30am) </li>
+                        <li class="pb-2"> </li>
+                        <li class="pb-2">First Wednesday: W.I.F.E (Worship. Intimacy. Fellowship. Experience) and Holy Communion Service <a class="text-decoration-none text-light py-1" href="#"></a>                        </li>
+                        <li class="pb-2">
+                            <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" href="#">Second Wednesday: Rhema Wednesday </a>                        </li>
+                        <li class="pb-2">
+                            <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" href="#">Third Wednesday: S.L.I (Sharing Life Issues) </a>                        </li>
+                        <li class="pb-2">
+                            <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" href="#">Fourth Wednesday: Varieties Wednesday (Movie Night) </a>                        </li>
+                        <li class="pb-2">
+                            <i class='bx-fw bx bxs-chevron-right bx-xs'></i><a class="text-decoration-none text-light py-1" href="#">Every Last Friday Of The Month: Night of Victory (Night Vigil) </a>                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 col-md-4 my-sm-0 mt-4">
+                    <h2 class="alert-link"><strong>For Help </strong></h2>
+                    <ul class="list-unstyled text-light light-300">
+                        <li class="pb-2">
+                            <i class='bx-fw bx bx-phone bx-xs'></i><a class="text-decoration-none text-light py-1" href="tel:+234-803-831-1059">+234-803-831-1059</a>
+                        </li>
+                        <li class="pb-2">
+                            <i class='bx-fw bx bx-mail-send bx-xs'></i><a class="text-decoration-none text-light py-1" href="rccgcoc@gmail.com">rccgcoc@gmail.com</a>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="w-100 bg-primary py-3">
+            <div class="container">
+                <div class="row pt-2">
+                    <div class="col-lg-6 col-sm-12">
+                        <p class="text-lg-start text-center text-light light-300">
+                            &copy; Copyright 2021 City Of Champions. All Rights Reserved.
+                        </p>
+                    </div>
+                    <div class="col-lg-6 col-sm-12">
+                        <p class="text-lg-end text-center text-light light-300">
+                            Designed by <a rel="sponsored" class="text-decoration-none text-light" href="https://www.youtube.com/channel/UCTB3b-UNVMCJ-X_B5Rr089A" target="_blank"><strong>Ak.Com</strong></a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </footer>
+    <!-- End Footer -->
+
+
+    <!-- Bootstrap -->
+    <script src="assets/js/bootstrap.bundle.min.js"></script>
+    <!-- Load jQuery require for isotope -->
+    <script src="assets/js/jquery.min.js"></script>
+    <!-- Isotope -->
+    <script src="assets/js/isotope.pkgd.js"></script>
+    <!-- Page Script -->
+    <script>
+        $(window).load(function() {
+            // init Isotope
+            var $projects = $('.projects').isotope({
+                itemSelector: '.project',
+                layoutMode: 'fitRows'
+            });
+            $(".filter-btn").click(function() {
+                var data_filter = $(this).attr("data-filter");
+                $projects.isotope({
+                    filter: data_filter
+                });
+                $(".filter-btn").removeClass("active");
+                $(".filter-btn").removeClass("shadow");
+                $(this).addClass("active");
+                $(this).addClass("shadow");
+                return false;
+            });
+        });
+    </script>
+    
+    <script src="assets/js/templatemo.js"></script>
+    <!-- Custom -->
+    <script src="assets/js/custom.js"></script>
+
+</body>
+
+</html>
